@@ -1,1 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --color-white-100: #fff;
+    --color-white-light-150: #f7f4fb;
+    --color-white-200: #e8e3f0;
+    --color-white-light-250: #eee7f7;
+
+    --color-black: #000;
+
+    --color-gray-100: #a89bb8;
+    --color-gray-light-200: #6b6375;
+
+    --color-transparent: transparent;
+
+    --color-espeon-purple-100: #1a1625;
+    --color-espeon-purple-200: #211c2e;
+    --color-espeon-purple-light-900: #2b2438;
+
+    --color-espeon-lavanda-100: #a67bc4;
+    --color-espeon-lavanda-200: #b98cd6;
+
+    --color-espeon-lavanda-light-300: #8e6bb5;
+    --color-espeon-lavanda-light-400: #a67bc4;
+
+    --color-espeon-red-100: #e85c5c;
+    --color-espeon-red-200: #ff6b6b;
+    --color-espeon-red-light-300: #d94848;
+
+    --font-family-sans: 'Inter', system-ui, sans-serif;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-espeon-purple-100);
+    color: var(--color-white-200);
+}
+
+* {
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}

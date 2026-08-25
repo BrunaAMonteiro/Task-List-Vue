@@ -1,8 +1,11 @@
 <template>
-  <div>
+  <div
+    class="min-h-screen bg-espeon-purple-light-900 dark: bg-espeon-purple-100 transitions-colors duration-200ms"
+  >
     <nav-bar />
 
-    <main> 
+    <main class="container mx-auto px-4 py-8 max-w-7xl"> 
+    
       <router-view />
     </main>
 
