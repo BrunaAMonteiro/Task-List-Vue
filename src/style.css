@@ -19,10 +19,11 @@
     --color-espeon-purple-100: #1a1625; /* bg dark */
     --color-espeon-purple-200: #211c2e; /* header dark */
     --color-espeon-purple-300: #3f3555; /* hearder border dark */
-    --color-espeon-purple-900: #2b2438; 
+    --color-espeon-purple-360: #3f3551; /* btn bg dark */
+    --color-espeon-purple-900: #2b2438; /* light text */
 
     --color-espeon-lavanda-100: #a67bc4;
-    --color-espeon-lavanda-200: #b98cd6; /* light text */
+    --color-espeon-lavanda-200: #b98cd6; 
 
     --color-espeon-lavanda-light-300: #8e6bb5;
     --color-espeon-lavanda-light-400: #a67bc4;

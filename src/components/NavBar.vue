@@ -1,5 +1,8 @@
 <template>
-    <header class="bg-white-light-250 dark: bg-espeon-purple-200 border-b border-white-200 dark: border-espeon-purple-300 sticky top-0 z-50" >
+    <header class="bg-white-light-250 
+    dark:bg-espeon-purple-200 border-b 
+    border-white-200 
+    dark:border-espeon-purple-300 sticky top-0 z-50" >
 
         <div class="flez items-center gap-4">
 
@@ -22,13 +25,15 @@
                 text-espeon-purple-900
                 dark:text-white-200 bg-transparent border
                 border-white-200
-                dark:border-espeon-purple-300 cursor-pointer transition-all duration-200 font-medium
+                dark:border-espeon-purple-200 cursor-pointer transition-all duration-200 font-medium
                 hover:border-gray-100
                 dark:hover:border-gray-light-200
                 hover:text-espeon-lavanda-light-300 
-                dark:hover:text-espeon-lavanda-100"
+                dark:hover:text-espeon-lavanda-100
+                dark:hover:bg-espeon-purple-360
+            "
             >
-                {{ isDark ? 'Modo Dark' : 'Modo Light' }}
+                {{ isDark ? 'Modo Light' : 'Modo Dark' }}
             </button>
         </div>
         

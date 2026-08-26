@@ -19,7 +19,7 @@ export function useTheme() {
 
     const initializeTheme = () => {
         const saveTheme = localStorage.getItem('theme')
-        const prefersDark = window.matchMedia('prefers-color-scheme: dark').matches
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
 
         if (saveTheme === 'dark' || (!saveTheme && prefersDark)) {
             isDark.value = true

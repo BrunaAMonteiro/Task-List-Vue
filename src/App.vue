@@ -1,6 +1,7 @@
 <template>
   <div
-    class="min-h-screen bg-white-light-150 dark: bg-espeon-purple-100 transitions-colors duration-200ms"
+    class="min-h-screen bg-white-100 dark:bg-espeon-purple-100 transitions-colors duration-200ms
+    dark:text-white-200"
   >
     <nav-bar />
 
