@@ -31,6 +31,7 @@
                 hover:text-espeon-lavanda-light-300 
                 dark:hover:text-espeon-lavanda-100
                 dark:hover:bg-espeon-purple-360
+                hover:bg-white-light-150
             "
             >
                 {{ isDark ? 'Modo Light' : 'Modo Dark' }}
