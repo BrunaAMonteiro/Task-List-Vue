@@ -81,11 +81,14 @@
                         <button
                             type="button"
                             class="absolute inset-y-0 right-0 pr-3 flex items-center"
+                            @click="togglePasswordVisibility"
                         >
                             <Eye 
+                                v-if="showPassword"
                                 class="h-5 w-5 hover:text-espeon-lavanda-light-300 dark:hover:text-espeon-lavanda-100"
                             />
                             <EyeOff 
+                                v-else
                                 class="h-5 w-5 hover:text-espeon-lavanda-light-300 dark:hover:text-espeon-lavanda-100"
                             />
 
@@ -117,7 +120,8 @@
 
 <script>
 import { NotebookPen, Lock, User, LogIn, Eye ,EyeOff  } from 'lucide-vue-next';
-
+import { useRouter } from 'vue-router';
+import { ref } from 'vue';
 export default {
     name: 'LoginView',
     components: {
@@ -127,6 +131,34 @@ export default {
         LogIn,
         Eye,
         EyeOff
+    },
+    setup() {
+        const router = useRouter()
+        const loading = ref(false)
+        const showPassword = ref(false)
+
+        const form = ref({
+            user: '',
+            password: ''
+        })
+
+        const togglePasswordVisibility = () => {
+            showPassword.value = !showPassword.value
+            const passwordInput = document.getElementById('password')
+            if (passwordInput) {
+                passwordInput.type = showPassword.value
+                ? 'text'
+                : 'password'
+            }
+        }
+
+        return {
+            form,
+            loading,
+            showPassword,
+            togglePasswordVisibility
+        }
+
     }
 }
 
