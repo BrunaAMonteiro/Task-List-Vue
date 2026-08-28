@@ -1,8 +1,3 @@
-<script setup lang="ts">
-import { NotebookPen } from 'lucide-vue-next';
-
-</script>
-
 <template>
     
     <div
@@ -36,11 +31,15 @@ import { NotebookPen } from 'lucide-vue-next';
 
             <form class="mt-8 space-y-6">
         <div class="space-y-4">
-            <div>
-                <label for="email" class="sr-only">
+
+                <div>
+                <label for="user" class="sr-only">
                     Usuário
                 </label>
                 <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center   pointer-events-none z-10">
+                        <User class="h-5 w-5 text-espeon-lavanda-100" />
+                    </div>
                     <input
                         id="user"
                         name="user"
@@ -55,13 +54,16 @@ import { NotebookPen } from 'lucide-vue-next';
                         ]"  
                     />
                 </div>
-            </div>
+                </div>
 
-            <div>
+                <div>
                 <label for="password" class="sr-only">
                     Senha
                 </label>
                 <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none  z-10">
+                        <Lock class="h-5 w-5 text-espeon-lavanda-100" />
+                    </div>
                     <input
                         id="password"
                         name="password"
@@ -75,23 +77,57 @@ import { NotebookPen } from 'lucide-vue-next';
                             'focus:outline-none focus:ring-espeon-lavanda-light-300 focus:border-espeon-lavanda-100 transition-colors'
                         ]"  
                     />
-                    <button
-                        type="button"
-                        class="absolute inset-y-0 right-0 pr-3 flex items-center"
-                    >
-                        <Eye 
-                            class="h-5 w-5 hover:text-espeon-lavanda-light-300 dark:hover:text-espeon-lavanda-100"
-                        />
-                        <EyeOff 
-                            class="h-5 w-5 hover:text-espeon-lavanda-light-300 dark:hover:text-espeon-lavanda-100"
-                        />
 
-                    </button>
+                        <button
+                            type="button"
+                            class="absolute inset-y-0 right-0 pr-3 flex items-center"
+                        >
+                            <Eye 
+                                class="h-5 w-5 hover:text-espeon-lavanda-light-300 dark:hover:text-espeon-lavanda-100"
+                            />
+                            <EyeOff 
+                                class="h-5 w-5 hover:text-espeon-lavanda-light-300 dark:hover:text-espeon-lavanda-100"
+                            />
+
+                        </button>
+
+                    </div>
                 </div>
-            </div>
 
-        </div>
+                    <button 
+                    type="submit"
+                    :class="[
+                        'group relative w-full flex justify-center py-3 px-4 border',
+                        'border-transparent text-sm font-medium rounded-lg text-espeon-purple-900',
+                        'bg-white-light-250 hover:bg-white-light-150 focus:outline-none',
+                        'focus:ring-2 focus:ring-offset-2 focus:ring-espeon-purple-900',
+                        'disabled:opacity-50 disabled:cursor-not-allowed transition-colors'
+
+                    ]"
+                >
+                    <LogIn class="w-5 mr-2" />
+                    Entrar
+                    </button>
+
+                </div>
             </form>
         </div>
     </div>
 </template>
+
+<script>
+import { NotebookPen, Lock, User, LogIn, Eye ,EyeOff  } from 'lucide-vue-next';
+
+export default {
+    name: 'LoginView',
+    components: {
+        NotebookPen,
+        Lock,
+        User,
+        LogIn,
+        Eye,
+        EyeOff
+    }
+}
+
+</script>
