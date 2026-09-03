@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
-import { authService } from '@/services/authService'
+import { authService } from '../services/authService'
 import { storage } from '@/utils/storage'
 import { useRouter } from 'vue-router'
 
