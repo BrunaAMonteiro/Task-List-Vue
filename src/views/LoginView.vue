@@ -29,11 +29,11 @@
         </p>
             </div> 
 
-            <form class="mt-8 space-y-6">
-        <div class="space-y-4">
+        <form class="mt-8 space-y-6" @submit.prevent="handleLogin">
+            <div class="space-y-4">
 
                 <div>
-                <label for="user" class="sr-only">
+                <label for="username" class="sr-only">
                     Usuário
                 </label>
                 <div class="relative">
@@ -41,8 +41,9 @@
                         <User class="h-5 w-5 text-espeon-lavanda-100" />
                     </div>
                     <input
-                        id="user"
-                        name="user"
+                        id="username"
+                        name="username"
+                        v-model="form.username"
                         type="text"
                         required
                         placeholder="Digite o nome de usuário"
@@ -67,6 +68,7 @@
                     <input
                         id="password"
                         name="password"
+                        v-model="form.password"
                         type="password"
                         required
                         placeholder="Digite a sua senha"
@@ -122,6 +124,7 @@
 import { NotebookPen, Lock, User, LogIn, Eye ,EyeOff  } from 'lucide-vue-next';
 import { useRouter } from 'vue-router';
 import { ref } from 'vue';
+import { useAuthStore } from '../store/authStore';
 export default {
     name: 'LoginView',
     components: {
@@ -136,9 +139,10 @@ export default {
         const router = useRouter()
         const loading = ref(false)
         const showPassword = ref(false)
+        const authStore = useAuthStore()
 
         const form = ref({
-            user: '',
+            username: '',
             password: ''
         })
 
@@ -152,11 +156,21 @@ export default {
             }
         }
 
+        const handleLogin = async () => {
+            try {
+                await authStore.login(form.value)
+            }
+            catch (err) {
+                console.log('Erro capturado:', error)
+            }
+        }
+
         return {
             form,
             loading,
             showPassword,
-            togglePasswordVisibility
+            togglePasswordVisibility,
+            handleLogin
         }
 
     }
