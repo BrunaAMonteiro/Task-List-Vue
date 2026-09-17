@@ -2,7 +2,7 @@ import axios from 'axios'
 import {storage} from '@/utils/storage'
 
 export const api = axios.create({
-    baseUrl: 'http//localhost:3000/api',
+    baseURL: 'http://localhost:3000/api',
     timeout: 10000
 })
 
