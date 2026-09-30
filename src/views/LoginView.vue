@@ -116,6 +116,10 @@
 
                 </div>
             </form>
+
+            <div>
+                <p>{{ authStore?.error }}</p>
+            </div>
         </div>
     </div>
 </template>
@@ -169,8 +173,9 @@ export default {
             form,
             loading,
             showPassword,
+            authStore,
             togglePasswordVisibility,
-            handleLogin
+            handleLogin,
         }
 
     }
